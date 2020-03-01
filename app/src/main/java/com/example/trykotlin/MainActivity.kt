@@ -25,12 +25,10 @@ class MainActivity : AppCompatActivity() {
         resetButton.setOnClickListener { reset() }
     }
 
-
     private fun rollDice() {
         diceImage.setImageResource(getRandomDiceImage())
         diceImage2.setImageResource(getRandomDiceImage())
     }
-
 
     private fun getRandomDiceImage(): Int {
         val randomInt = (1..6).random()
@@ -51,5 +49,4 @@ class MainActivity : AppCompatActivity() {
         diceImage.setImageResource(drawableResources)
         diceImage2.setImageResource(drawableResources)
     }
-
 }
