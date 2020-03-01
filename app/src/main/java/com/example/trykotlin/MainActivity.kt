@@ -1,21 +1,15 @@
 package com.example.trykotlin
 
-import android.media.Image
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.trykotlin.R.drawable.empty_dice
-import kotlin.time.seconds
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var diceImage : ImageView
-    lateinit var diceImage2 : ImageView
+    lateinit var diceImage: ImageView
+    lateinit var diceImage2: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,20 +21,19 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice() }
 
-//
-//
+
         val resetButton: Button = findViewById(R.id.resetcount_button)
         resetButton.setOnClickListener { reset() }
     }
 
 
-    private fun rollDice(){
+    private fun rollDice() {
         diceImage.setImageResource(getRandomDiceImage())
         diceImage2.setImageResource(getRandomDiceImage())
     }
 
 
-    private fun getRandomDiceImage() : Int {
+    private fun getRandomDiceImage(): Int {
         val randomInt = (1..6).random()
 
         return when (randomInt) {
@@ -53,11 +46,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun reset(){
-    val diceImage: ImageView = findViewById(R.id.dice_image)
-    val drawableResources = empty_dice
-    diceImage.setImageResource(drawableResources)
-    diceImage2.setImageResource(drawableResources)
+    private fun reset() {
+        val diceImage: ImageView = findViewById(R.id.dice_image)
+        val drawableResources = empty_dice
+        diceImage.setImageResource(drawableResources)
+        diceImage2.setImageResource(drawableResources)
     }
 
 }
